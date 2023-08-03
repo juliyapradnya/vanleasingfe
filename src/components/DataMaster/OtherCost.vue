@@ -261,7 +261,7 @@ export default {
         this.othercosts.append("vendor_name", this.form.vendor_name);
         this.othercosts.append("amount_oc", this.form.amount_oc);
 
-        var url = this.$api + "/othercost/";
+        var url = this.$api + "/othercost";
         this.load = true;
         this.$http
           .post(url, this.othercosts, {

@@ -312,7 +312,7 @@ export default {
         this.rehiringorders.append("vehicle_return_date",this.form.vehicle_return_date);
         //this.rehiringorders.append("sold_price", this.form.sold_price);
 
-        var url = this.$api + "/rehiringorder/";
+        var url = this.$api + "/rehiringorder";
         this.load = true;
         this.$http
           .post(url, this.rehiringorders, {

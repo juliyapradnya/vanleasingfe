@@ -465,7 +465,7 @@ export default {
         this.salesorders.append("monthly_rental", this.form.monthly_rental);
         this.salesorders.append("other_income", this.form.other_income);
         
-        var url = this.$api + "/salesorder/";
+        var url = this.$api + "/salesorder";
         this.load = true;
         this.$http
           .post(url, this.salesorders, {

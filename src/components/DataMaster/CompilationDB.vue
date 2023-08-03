@@ -204,7 +204,7 @@ export default {
         this.purchaseorders.append("final_payment", this.form.final_payment);
         this.purchaseorders.append("hp_interest_type", this.form.hp_interest_type);
         
-        var url = this.$api + "/purchaseorder/";
+        var url = this.$api + "/purchaseorder";
         this.load = true;
         this.$http
           .post(url, this.purchaseorders, {

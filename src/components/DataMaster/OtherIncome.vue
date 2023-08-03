@@ -259,7 +259,7 @@ export default {
         this.otherincomes.append("amount_oi", this.form.amount_oi);
         this.otherincomes.append("payment_profile", this.form.payment_profile);
 
-        var url = this.$api + "/otherincome/";
+        var url = this.$api + "/otherincome";
         this.load = true;
         this.$http
           .post(url, this.otherincomes, {
