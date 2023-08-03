@@ -16,7 +16,7 @@ Vue.use(VueMoment, { moment });
 
 Vue.prototype.$http = axios;
 Vue.prototype.$api = 'https://apivl.piomenosystem.com/api';
-
+//h
 new Vue({
   vuetify,
   router,
