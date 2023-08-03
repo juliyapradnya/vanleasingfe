@@ -75,6 +75,18 @@
                   md="4"
                 >
                   <v-text-field
+                    v-model="form.agreement_number"
+                    label="Agreement Number"
+                    outlined
+                    :rules="agreementNumberRules"
+                    required
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
                     v-model="form.cust_name"
                     label="Customer Name"
                     outlined
@@ -334,6 +346,7 @@ export default {
         { text: "Vehicle Registration Number", value: "vehicle_registration" },
         { text: "Contract Type", value: "type" },
         { text: "Order Number", value: "agreement_no" },
+        { text: "Agreement Number", value: "agreement_number" },
         { text: "Customer Name", value: "cust_name" },
         { text: "Prepared By", value: "sales_person" },
         { text: "Sales Starting Date", value: "contract_start_date" },
@@ -357,6 +370,7 @@ export default {
         id_purchase_order: null,
         type: null,
         agreement_no: null,
+        agreement_number: null,
         cust_name: null,
         sales_person: null,
         contract_start_date: null,
@@ -373,6 +387,7 @@ export default {
         other_income: null,
       },
       typeRules: [(v) => !!v || "Type must be required"],
+      agreementNumberRules: [(v) => !!v || "Customer Name must be required"],
       customerNameRules: [(v) => !!v || "Customer Name must be required"],
       salesPersonRules: [(v) => !!v || "Sales Person must be required"],
       contractStartDateRules: [(v) => !!v || "Contract Start Date must be required"],
@@ -434,7 +449,7 @@ export default {
       if (this.$refs.form.validate()) {
         this.salesorders.append("id_purchase_order", this.form.id_purchase_order);
         this.salesorders.append("type", this.form.type);
-        //this.salesorders.append("agreement_no", this.form.agreement_no);
+        this.salesorders.append("agreement_number", this.form.agreement_number);
         this.salesorders.append("cust_name", this.form.cust_name);
         this.salesorders.append("sales_person", this.form.sales_person);
         this.salesorders.append("contract_start_date", this.form.contract_start_date);
@@ -481,6 +496,7 @@ export default {
         id_purchase_order     : this.form.id_purchase_order,
         type                  : this.form.type,
         agreement_no          : this.form.agreement_no,
+        agreement_number      : this.form.agreement_number,
         cust_name             : this.form.cust_name,
         sales_person          : this.form.sales_person,
         contract_start_date   : this.form.contract_start_date,
@@ -555,6 +571,7 @@ export default {
       this.form.id_purchase_order = item.id_purchase_order;
       this.form.type = item.type;
       this.form.agreement_no = item.agreement_no;
+      this.form.agreement_number = item.agreement_number;
       this.form.cust_name = item.cust_name;
       this.form.sales_person = item.sales_person;
       this.form.contract_start_date = item.contract_start_date;

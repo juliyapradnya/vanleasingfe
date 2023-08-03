@@ -41,16 +41,25 @@
         <div>
           <v-container>
             <v-row dense>
-              <v-col v-for="item in listVehicleInVehicleCard" :key="item.id" cols="3">
+              <v-col
+                v-for="item in listVehicleInVehicleCard"
+                :key="item.id"
+                cols="3"
+              >
                 <v-card color="#7ae582" class="mt-2">
                   <v-card-title class="text-h5 font-weight-black">
                     {{ item.vehicle_registration }}
                   </v-card-title>
                   <hr style="height: 2px" />
                   <v-card-subtitle class="font-weight-black">
-                    <p>Next Step : {{ item.next_step }}</p>
+                    <p>Status Sales : {{ item.next_step_status_sales }}</p>
+                    <p>Status Car : {{ item.status_next_step }}</p>
+                    <p>Contract Start Date : {{ item.contract_start_date }}</p>
                     <p>Original Sales Order Number : {{ item.agreement_no }}</p>
                     <p>Vehicle Return Date : {{ item.vehicle_return_date }}</p>
+                    <p>Annual Mileage : {{ item.annual_mileage }}</p>
+                    <p>Monthly Rental : {{ item.monthly_rental }}</p>
+                    <p>Total Income : {{ item.total_income }}</p>
                     <p v-if="item.next_step != 'Rehiring'">
                       Sold Price : {{ item.sold_price }}
                     </p>

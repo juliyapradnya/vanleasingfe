@@ -224,7 +224,7 @@ export default {
     },
 
     readDataPurchaseOrder() {
-      var url = this.$api + "/showvehiclenumberinotherincome";
+      var url = this.$api + "/purchaseorder";
       this.$http
         .get(url, {
           headers: {

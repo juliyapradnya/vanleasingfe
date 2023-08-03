@@ -66,8 +66,8 @@ export default {
       snackbar: false,
       items: [
         { text: "Dashboard", icon: "mdi-view-dashboard", to: "/dashboard" },
-        { text: "Sales Order", icon: "mdi-car-hatchback", to: "/salesorder" },
         { text: "Purchase Order", icon: "mdi-account-group", to: "/purchaseorder" },
+        { text: "Sales Order", icon: "mdi-car-hatchback", to: "/salesorder" },
         { text: "Other Cost", icon: "mdi-text-box", to: "/othercost" },
         { text: "Other Income", icon: "mdi-file-document-edit", to: "/otherincome" },
         { text: "Return/Sold Order", icon: "mdi-ticket-confirmation", to: "/rehiringorder" },
