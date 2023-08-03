@@ -40,7 +40,7 @@ export default {
         { text: "Vehicle No. Support", value: "vehicle_registration" },
 
         { text: "Contract Type", value: "type" },
-        { text: "Order Number", value: "agreement_no" },
+        { text: "Agreement Number", value: "agreement_number" },
 
         //{ text: "Next Step", value: "next_step" },
         { text: "Status Mobil", value: "status_next_step" },
@@ -311,7 +311,7 @@ export default {
       
       this.listSalesOrders.map((s)=>{
         if(item.id_sales_order == s.id){
-          return this.listSalesOrdersCopy.push({'id': s.id, 'agreement_no': s.agreement_no})
+          return this.listSalesOrdersCopy.push({'id': s.id, 'agreement_number': s.agreement_number})
         }
       })
       

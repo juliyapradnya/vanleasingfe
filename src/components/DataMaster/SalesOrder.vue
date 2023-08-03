@@ -345,7 +345,7 @@ export default {
       headers: [
         { text: "Vehicle Registration Number", value: "vehicle_registration" },
         { text: "Contract Type", value: "type" },
-        { text: "Order Number", value: "agreement_no" },
+        //{ text: "Order Number", value: "agreement_no" },
         { text: "Agreement Number", value: "agreement_number" },
         { text: "Customer Name", value: "cust_name" },
         { text: "Prepared By", value: "sales_person" },
@@ -369,7 +369,7 @@ export default {
       form: {
         id_purchase_order: null,
         type: null,
-        agreement_no: null,
+        //agreement_no: null,
         agreement_number: null,
         cust_name: null,
         sales_person: null,
@@ -495,7 +495,7 @@ export default {
       let newData = {
         id_purchase_order     : this.form.id_purchase_order,
         type                  : this.form.type,
-        agreement_no          : this.form.agreement_no,
+        //agreement_no          : this.form.agreement_no,
         agreement_number      : this.form.agreement_number,
         cust_name             : this.form.cust_name,
         sales_person          : this.form.sales_person,
@@ -570,7 +570,7 @@ export default {
       this.editId = item.id;
       this.form.id_purchase_order = item.id_purchase_order;
       this.form.type = item.type;
-      this.form.agreement_no = item.agreement_no;
+      //this.form.agreement_no = item.agreement_no;
       this.form.agreement_number = item.agreement_number;
       this.form.cust_name = item.cust_name;
       this.form.sales_person = item.sales_person;

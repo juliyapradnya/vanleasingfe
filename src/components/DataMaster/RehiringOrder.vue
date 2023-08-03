@@ -56,7 +56,7 @@
               v-if="inputType == 'Add'"
               v-model="form.id_sales_order"
               :items="salesorders"
-              item-text="agreement_no"
+              item-text="agreement_number"
               item-value="id"
               label="Original Sales Order Number"
               outlined
@@ -67,7 +67,7 @@
               v-else
               v-model="form.id_sales_order"
               :items="listSalesOrdersCopy"
-              item-text="agreement_no"
+              item-text="agreement_number"
               item-value="id"
               label="Original Sales Order Number"
               outlined
@@ -184,7 +184,7 @@ export default {
       ],
       headers: [
         { text: "Re-hire Next Step", value: "next_step" },
-        { text: "Original Sales Order Number", value: "agreement_no" },
+        { text: "Original Sales Order Number", value: "agreement_number" },
         //{ text: "New Sales Order No. (If Re-Hire)", value: "new_sales_order_no" },
         { text: "Vehicle Registration Number", value: "vehicle_registration" },
         { text: "Re-hire Vehicle Return Date", value: "vehicle_return_date" },
@@ -416,7 +416,7 @@ export default {
       
       this.listSalesOrders.map((s)=>{
         if(item.id_sales_order == s.id){
-          return this.listSalesOrdersCopy.push({'id': s.id, 'agreement_no': s.agreement_no})
+          return this.listSalesOrdersCopy.push({'id': s.id, 'agreement_number': s.agreement_number})
         }
       })
 

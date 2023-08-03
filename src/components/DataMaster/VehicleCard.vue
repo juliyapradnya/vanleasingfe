@@ -55,7 +55,7 @@
                     <p>Status Sales : {{ item.next_step_status_sales }}</p>
                     <p>Status Car : {{ item.status_next_step }}</p>
                     <p>Contract Start Date : {{ item.contract_start_date }}</p>
-                    <p>Original Sales Order Number : {{ item.agreement_no }}</p>
+                    <p>Original Sales Order Number : {{ item.agreement_number }}</p>
                     <p>Vehicle Return Date : {{ item.vehicle_return_date }}</p>
                     <p>Annual Mileage : {{ item.annual_mileage }}</p>
                     <p>Monthly Rental : {{ item.monthly_rental }}</p>
@@ -94,7 +94,7 @@ export default {
       dialogShowVehicle: false,
       id: null,
       vehicle_registration: null,
-      agreement_no: null,
+      agreement_number: null,
       next_step: null,
       new_sales_order_no: null,
       vehicle_return_date: null,
