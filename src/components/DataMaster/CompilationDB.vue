@@ -12,6 +12,7 @@
           prepend-inner-icon="mdi-magnify"
           label="Search"
         ></v-text-field>
+
         <v-spacer></v-spacer>
       </v-card-title>
       <v-data-table :headers="headers" :items="compilationdb" :search="search">
@@ -37,7 +38,9 @@ export default {
       dialogConfirm: false,
       menu1: false,
       headers: [
-        { text: "Vehicle No. Support", value: "vehicle_registration" },
+        { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
+
+        { text: "Vehicle No. Support", value: "vehicle_registration" , width: '100px'},
 
         { text: "Contract Type", value: "type" },
         { text: "Agreement Number", value: "agreement_number" },
@@ -47,16 +50,16 @@ export default {
         { text: "Status Sales", value: "next_step_status_sales" },
         
         //{ text: "New Sales Order No", value: "new_sales_order_no" },
-        { text: "Vehicle Return Date", value: "vehicle_return_date" },
+        { text: "Vehicle Return Date", value: "vehicle_return_date" , width: '150px'},
 
-        { text: "Hire Purchase Name", value: "hp_finance_provider" },
+        { text: "Hire Purchase Name", value: "hp_finance_provider" , width: '150px' },
 
-        { text: "Customer Name", value: "cust_name" },
-        { text: "Prepared By", value: "sales_person" },
-        { text: "Sales Starting Date", value: "contract_start_date" },
+        { text: "Customer Name", value: "cust_name" , width: '150px'},
+        { text: "Prepared By", value: "sales_person" , width: '150px'},
+        { text: "Sales Starting Date", value: "contract_start_date" , width: '150px'},
         { text: "Vehicle Manufacturer", value: "vehicle_manufacturer" },
         { text: "Vehicle Model", value: "vehicle_model" },
-        { text: "Vehicle Variant", value: "vehicle_variant" },
+        
         //{ text: "Vehicle Description", value: "vehicle_description" },
         { text: "Basic List Price", value: "basic_list_price" },
         { text: "Residual Value Projection", value: "residual_value" },
@@ -71,7 +74,7 @@ export default {
         { text: "Sales Monthly Rental", value: "monthly_rental" },
         { text: "Initial Other Income", value: "other_income" },
         
-        { text: "Purchase Starting Date", value: "hire_purchase_starting_date" },
+        { text: "Purchase Starting Date", value: "hire_purchase_starting_date" , width: '150px'},
         { text: "Interest Rate (p.a.)", value: "hp_interest_per_annum" },
         { text: "Deposit", value: "hp_deposit_amount" },
         { text: "Period Term (months)", value: "hp_term" },
@@ -92,7 +95,7 @@ export default {
         { text: "Margin Term", value: "margin_term" },
         { text: "Total Income", value: "total_income" },
         { text: "Financing Amount", value: "financing_amount" },
-        { text: "Regular Monthly Payment", value: "regular_monthly_payment" },
+        { text: "Regular Monthly Payment", value: "regular_monthly_payment" , width: '150px'},
 
         { text: "Payment Profile", value: "payment_profile" },
       ],

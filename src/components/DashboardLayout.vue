@@ -10,7 +10,7 @@
     >
       <v-list-item>
         <v-list-item-content>
-          <img id="logoLogin" src="../assets/mpremove.png" width="50" height="65" alt="Kitten">
+          <img id="logoLogin" src="../assets/vanleasing.png" width="50" height="65" alt="Kitten">
         </v-list-item-content>
       </v-list-item>
           <v-list dense>

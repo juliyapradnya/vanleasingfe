@@ -5,7 +5,7 @@
         <v-flex xs12 sm4 elevation-6>
           <v-card-title id="titleHeader">
               <span id="titleLogin">STRATEGY INSTITUTE</span>
-            <img id="logoLogin" src="../assets/mpremove.png" width="200" height="200" alt="Kitten">
+            <img id="logoLogin" src="../assets/vanleasing.png" width="200" height="200" alt="Kitten">
             
           </v-card-title>
           <v-card-title>
