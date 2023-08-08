@@ -40,13 +40,13 @@ export default {
       headers: [
         
 
-        { text: "Vehicle No. Support", value: "vehicle_registration" , width: '150px'},
+        { text: "Vehicle No. Support", value: "vehicle_registration" , width: '150px' , height: '100px'},
 
-        { text: "Contract Type", value: "type" , width: '150px'},
-        { text: "Agreement Number", value: "agreement_number" , width: '150px'},
+        { text: "Contract Type", value: "type" , width: '150px', height: '100px'},
+        { text: "Agreement Number", value: "agreement_number" , width: '150px', height: '100px'},
 
         //{ text: "Next Step", value: "next_step" },
-        { text: "Status Mobil", value: "status_next_step" , width: '150px'},
+        { text: "Status Mobil", value: "status_next_step" , width: '150px', height: '100px'},
         { text: "Status Sales", value: "next_step_status_sales" , width: '150px'},
         
         //{ text: "New Sales Order No", value: "new_sales_order_no" },
