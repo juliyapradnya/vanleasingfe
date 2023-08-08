@@ -46,8 +46,8 @@ export default {
         { text: "Agreement Number", value: "agreement_number" , width: '150px'},
 
         //{ text: "Next Step", value: "next_step" },
-        { text: "Status Mobil", value: "status_next_step" , width: '150px'},
-        { text: "Status Sales", value: "next_step_status_sales" , width: '150px'},
+        { text: "Vehicle Status", value: "status_next_step" , width: '150px'},
+        { text: "Contract Status", value: "next_step_status_sales" , width: '150px'},
         
         //{ text: "New Sales Order No", value: "new_sales_order_no" },
         { text: "Vehicle Return Date", value: "vehicle_return_date" , width: '150px'},
@@ -67,7 +67,8 @@ export default {
         { text: "Total Income", value: "total_income_new" , width: '150px'},
         { text: "Total Cost", value: "total_cost" , width: '150px'},
         { text: "Contract Margin", value: "contract_margin" , width: '150px'},
-
+        { text: "Rental Income", value: "rental_income" , width: '150px'},
+        
         { text: "Margin Term", value: "margin_term" , width: '150px'},
         { text: "Financing Amount", value: "financing_amount" , width: '150px'},
         { text: "Regular Monthly Payment", value: "regular_monthly_payment" , width: '150px'},
@@ -95,7 +96,7 @@ export default {
         { text: "Initial Other Income", value: "other_income" , width: '150px'},
         
         
-        { text: "Interest Rate (p.a.)", value: "hp_interest_per_annum" , width: '150px'},
+        { text: "Interest Rate Percentage", value: "hp_interest_per_annum" , width: '150px'},
         { text: "Deposit", value: "hp_deposit_amount" , width: '150px'},
         { text: "Period Term (months)", value: "hp_term" , width: '150px'},
         { text: "Documentation Fee", value: "documentation_fees_pu" , width: '150px'},
