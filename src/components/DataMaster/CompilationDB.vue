@@ -40,14 +40,14 @@ export default {
       headers: [
         
 
-        { text: "Vehicle No. Support", value: "vehicle_registration" , width: '100px'},
+        { text: "Vehicle No. Support", value: "vehicle_registration" , width: '150px'},
 
-        { text: "Contract Type", value: "type" },
-        { text: "Agreement Number", value: "agreement_number" },
+        { text: "Contract Type", value: "type" , width: '150px'},
+        { text: "Agreement Number", value: "agreement_number" , width: '150px'},
 
         //{ text: "Next Step", value: "next_step" },
-        { text: "Status Mobil", value: "status_next_step" },
-        { text: "Status Sales", value: "next_step_status_sales" },
+        { text: "Status Mobil", value: "status_next_step" , width: '150px'},
+        { text: "Status Sales", value: "next_step_status_sales" , width: '150px'},
         
         //{ text: "New Sales Order No", value: "new_sales_order_no" },
         { text: "Vehicle Return Date", value: "vehicle_return_date" , width: '150px'},
@@ -56,51 +56,54 @@ export default {
 
         { text: "Customer Name", value: "cust_name" , width: '150px'},
         { text: "Prepared By", value: "sales_person" , width: '150px'},
+
+        { text: "Purchase Starting Date", value: "hire_purchase_starting_date" , width: '150px'},
         { text: "Sales Starting Date", value: "contract_start_date" , width: '150px'},
-        { text: "Vehicle Manufacturer", value: "vehicle_manufacturer" },
-        { text: "Vehicle Model", value: "vehicle_model" },
+        { text: "Vehicle Manufacturer", value: "vehicle_manufacturer" , width: '150px'},
+        { text: "Vehicle Model", value: "vehicle_model" , width: '150px'},
         { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
         
         //{ text: "Vehicle Description", value: "vehicle_description" },
-        { text: "Total Income", value: "total_income_new" },
-        { text: "Total Cost", value: "total_cost" },
+        { text: "Total Income", value: "total_income_new" , width: '150px'},
+        { text: "Total Cost", value: "total_cost" , width: '150px'},
+        { text: "Contract Margin", value: "contract_margin" , width: '150px'},
 
-        { text: "Margin Term", value: "margin_term" },
-        { text: "Financing Amount", value: "financing_amount" },
+        { text: "Margin Term", value: "margin_term" , width: '150px'},
+        { text: "Financing Amount", value: "financing_amount" , width: '150px'},
         { text: "Regular Monthly Payment", value: "regular_monthly_payment" , width: '150px'},
-        { text: "First Payment", value: "first_payment" },
+        { text: "First Payment", value: "first_payment" , width: '150px'},
         
-        { text: "Penalty Early Settlement", value: "penalty_early_settlement" },
-        { text: "Settlement", value: "settlement" },
-        { text: "Annum Payment", value: "annum_payment" },
-        { text: "Contract Margin", value: "contract_margin" },
-
-        { text: "Vehicle Tracking", value: "vehicle_tracking" },
-        { text: "Sum Doc Deposit Other", value: "sum_docdepoth" },
-
-        { text: "Basic List Price", value: "basic_list_price" },
-        { text: "Residual Value Projection", value: "residual_value" },
-
-        { text: "Sold Price", value: "sold_price" },
-
-        { text: "Annual Mileage", value: "annual_mileage" },
-        { text: "Period Term (months)", value: "term_months" },
-        { text: "Rental Advance (GBP)", value: "initial_rental" },
-        { text: "Price Otr", value: "price_otr" },
-        { text: "Documentation Fee", value: "documentation_fees" },
-        { text: "Sales Monthly Rental", value: "monthly_rental" },
-        { text: "Initial Other Income", value: "other_income" },
+        { text: "Penalty Early Settlement", value: "penalty_early_settlement" , width: '150px'},
+        { text: "Settlement", value: "settlement" , width: '150px'},
+        { text: "Annum Payment", value: "annum_payment" , width: '150px'},
         
-        { text: "Purchase Starting Date", value: "hire_purchase_starting_date" , width: '150px'},
-        { text: "Interest Rate (p.a.)", value: "hp_interest_per_annum" },
-        { text: "Deposit", value: "hp_deposit_amount" },
-        { text: "Period Term (months)", value: "hp_term" },
-        { text: "Documentation Fee", value: "documentation_fees_pu" },
-        { text: "Final Fee", value: "final_fees" },
-        { text: "Other Fee", value: "other_fees" },
-        { text: "Sales Monthly Payment", value: "monthly_payment" },
-        { text: "Last Payment", value: "final_payment" },
-        { text: "Interest Type", value: "hp_interest_type" },
+
+        { text: "Vehicle Tracking", value: "vehicle_tracking" , width: '150px'},
+        { text: "Sum Doc Deposit Other", value: "sum_docdepoth" , width: '150px'},
+
+        { text: "Basic List Price", value: "basic_list_price" , width: '150px'},
+        { text: "Residual Value Projection", value: "residual_value" , width: '150px'},
+
+        { text: "Sold Price", value: "sold_price" , width: '150px'},
+
+        { text: "Annual Mileage", value: "annual_mileage" , width: '150px'},
+        { text: "Period Term (months)", value: "term_months" , width: '150px'},
+        { text: "Rental Advance (GBP)", value: "initial_rental" , width: '150px'},
+        { text: "Price Otr", value: "price_otr" , width: '150px'},
+        { text: "Documentation Fee", value: "documentation_fees" , width: '150px'},
+        { text: "Sales Monthly Rental", value: "monthly_rental" , width: '150px'},
+        { text: "Initial Other Income", value: "other_income" , width: '150px'},
+        
+        
+        { text: "Interest Rate (p.a.)", value: "hp_interest_per_annum" , width: '150px'},
+        { text: "Deposit", value: "hp_deposit_amount" , width: '150px'},
+        { text: "Period Term (months)", value: "hp_term" , width: '150px'},
+        { text: "Documentation Fee", value: "documentation_fees_pu" , width: '150px'},
+        { text: "Final Fee", value: "final_fees" , width: '150px'},
+        { text: "Other Fee", value: "other_fees" , width: '150px'},
+        { text: "Sales Monthly Payment", value: "monthly_payment" , width: '150px'},
+        { text: "Last Payment", value: "final_payment" , width: '150px'},
+        { text: "Interest Type", value: "hp_interest_type" , width: '150px'},
 
         //{ text: "Description Expenses", value: "description_expenses" },
         //{ text: "Vendor Name", value: "vendor_name" },
