@@ -343,7 +343,7 @@ export default {
       dialogConfirm: false,
       menu1: false,
       headers: [
-        { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
+        
         { text: "Vehicle Registration Number", value: "vehicle_registration" },
         { text: "Contract Type", value: "type" },
         //{ text: "Order Number", value: "agreement_no" },
@@ -353,6 +353,7 @@ export default {
         { text: "Sales Starting Date", value: "contract_start_date" , width: '150px'},
         { text: "Vehicle Manufacturer", value: "vehicle_manufacturer" },
         { text: "Vehicle Model", value: "vehicle_model" },
+        { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
         { text: "Basic List Price", value: "basic_list_price" },
         { text: "Residual Value Projection", value: "residual_value" },
         { text: "Annual Mileage", value: "annual_mileage" },

@@ -38,7 +38,7 @@ export default {
       dialogConfirm: false,
       menu1: false,
       headers: [
-        { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
+        
 
         { text: "Vehicle No. Support", value: "vehicle_registration" , width: '100px'},
 
@@ -59,6 +59,7 @@ export default {
         { text: "Sales Starting Date", value: "contract_start_date" , width: '150px'},
         { text: "Vehicle Manufacturer", value: "vehicle_manufacturer" },
         { text: "Vehicle Model", value: "vehicle_model" },
+        { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
         
         //{ text: "Vehicle Description", value: "vehicle_description" },
         { text: "Basic List Price", value: "basic_list_price" },
@@ -176,6 +177,20 @@ export default {
         });
     },
 
+    readDataPurchaseOrders() {
+      var url = this.$api + "/salesorder";
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          this.purchaseorder = response.data.data;
+          console.log(response.data.data)
+        });
+    },
+
     // readDataSalesOrder() {
     //   var url = this.$api + "/showagreementnumber";
     //   this.$http
@@ -223,6 +238,7 @@ export default {
             this.close();
             this.readData(); //mengambil data
             this.readDataSalesOrder();
+            this.readDataPurchaseOrders();
             this.resetForm();
           })
           .catch((error) => {
@@ -267,6 +283,7 @@ export default {
           this.close();
           this.readData(); //mengambil data
           this.readDataSalesOrder(); //mengambil data
+          this.readDataPurchaseOrders();
           this.resetForm();
           if(this.listSalesOrdersCopy.length > this.salesorders.length){
             this.listSalesOrdersCopy.pop();
@@ -299,6 +316,7 @@ export default {
           this.close();
           this.readData(); 
           this.readDataSalesOrder();//mengambil data
+          this.readDataPurchaseOrders();
           this.resetForm();
           this.inputType = "Tambah";
         })
@@ -364,6 +382,7 @@ export default {
     this.readData();
     this.readDataSalesOrder();
     this.listDataSalesOrders();
+    this.readDataPurchaseOrders();
   },
 };
 </script>
