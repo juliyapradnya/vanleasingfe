@@ -97,6 +97,8 @@ export default {
         { text: "Total Income", value: "total_income" },
         { text: "Financing Amount", value: "financing_amount" },
         { text: "Regular Monthly Payment", value: "regular_monthly_payment" , width: '150px'},
+        { text: "First Payment", value: "first_payment" },
+        { text: "New Total Income", value: "total_income_new" },
 
         { text: "Payment Profile", value: "payment_profile" },
       ],
