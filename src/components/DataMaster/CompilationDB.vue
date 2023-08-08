@@ -62,6 +62,22 @@ export default {
         { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
         
         //{ text: "Vehicle Description", value: "vehicle_description" },
+        { text: "Total Income", value: "total_income_new" },
+        { text: "Total Cost", value: "total_cost" },
+
+        { text: "Margin Term", value: "margin_term" },
+        { text: "Financing Amount", value: "financing_amount" },
+        { text: "Regular Monthly Payment", value: "regular_monthly_payment" , width: '150px'},
+        { text: "First Payment", value: "first_payment" },
+        
+        { text: "Penalty Early Settlement", value: "penalty_early_settlement" },
+        { text: "Settlement", value: "settlement" },
+        { text: "Annum Payment", value: "annum_payment" },
+        { text: "Contract Margin", value: "contract_margin" },
+
+        { text: "Vehicle Tracking", value: "vehicle_tracking" },
+        { text: "Sum Doc Deposit Other", value: "sum_docdepoth" },
+
         { text: "Basic List Price", value: "basic_list_price" },
         { text: "Residual Value Projection", value: "residual_value" },
 
@@ -86,21 +102,18 @@ export default {
         { text: "Last Payment", value: "final_payment" },
         { text: "Interest Type", value: "hp_interest_type" },
 
-        { text: "Description Expenses", value: "description_expenses" },
-        { text: "Vendor Name", value: "vendor_name" },
-        { text: "Amount (GBP)", value: "amount_oc" },
+        //{ text: "Description Expenses", value: "description_expenses" },
+        //{ text: "Vendor Name", value: "vendor_name" },
+        //{ text: "Amount (GBP)", value: "amount_oc" },
 
-        { text: "Description Income", value: "description_income" },
-        { text: "Amount (GBP)", value: "amount_oi" },
+        //{ text: "Description Income", value: "description_income" },
+        //{ text: "Amount (GBP)", value: "amount_oi" },
 
-        { text: "Margin Term", value: "margin_term" },
-        { text: "Total Income", value: "total_income" },
-        { text: "Financing Amount", value: "financing_amount" },
-        { text: "Regular Monthly Payment", value: "regular_monthly_payment" , width: '150px'},
-        { text: "First Payment", value: "first_payment" },
-        { text: "New Total Income", value: "total_income_new" },
+        
+        //{ text: "Total Income", value: "total_income" },
+        
 
-        { text: "Payment Profile", value: "payment_profile" },
+        //{ text: "Payment Profile", value: "payment_profile" },
       ],
       purchaseorders: new FormData(),
       purchaseorder: [],
