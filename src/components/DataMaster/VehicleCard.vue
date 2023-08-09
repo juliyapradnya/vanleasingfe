@@ -52,17 +52,25 @@
                   </v-card-title>
                   <hr style="height: 2px" />
                   <v-card-subtitle class="font-weight-black">
-                    <p>Status Sales : {{ item.next_step_status_sales }}</p>
-                    <p>Status Car : {{ item.status_next_step }}</p>
-                    <p>Contract Start Date : {{ item.contract_start_date }}</p>
                     <p>Original Sales Order Number : {{ item.agreement_number }}</p>
-                    <p>Vehicle Return Date : {{ item.vehicle_return_date }}</p>
+                    <p>Contract Status : {{ item.next_step_status_sales }}</p>
+                    <p>Fleet Status : {{ item.status_next_step }}</p>
+                    <p>Contract Start Date : {{ item.contract_start_date }}</p>
+                    <p>Contract End Date : {{ item.vehicle_return_date }}</p>
+                    <p>Sold Date : {{  }}</p>
                     <p>Annual Mileage : {{ item.annual_mileage }}</p>
                     <p>Monthly Rental : {{ item.monthly_rental }}</p>
-                    <p>Total Income : {{ item.total_income }}</p>
+                    <p>Total Income : {{ item.total_income_new }}</p>
+                    <p>Total Income : {{ item.total_cost }}</p>
+                    <p>Total Contract Margin : {{ item.contract_margin }}</p>
+                    <p>Rental Income : {{ item.rental_income }}</p>
+                    <p>Monthly Rental : {{ item.monthly_rental }}</p>
+                    <p>Term Period : {{ item.margin_term }}</p>
                     <p v-if="item.next_step != 'Rehiring'">
                       Sold Price : {{ item.sold_price }}
                     </p>
+                    <p>Financing Amount : {{ item.financing_amount }}</p>
+                    <p>Deposit : {{ item.hp_deposit_amount }}</p>
                   </v-card-subtitle>
                 </v-card>
               </v-col>
