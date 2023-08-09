@@ -61,7 +61,7 @@
                     <p>Annual Mileage : {{ item.annual_mileage }}</p>
                     <p>Monthly Rental : {{ item.monthly_rental }}</p>
                     <p>Total Income : {{ item.total_income_new }}</p>
-                    <p>Total Income : {{ item.total_cost }}</p>
+                    <p>Total Cost : {{ item.total_cost }}</p>
                     <p>Total Contract Margin : {{ item.contract_margin }}</p>
                     <p>Rental Income : {{ item.rental_income }}</p>
                     <p>Monthly Rental : {{ item.monthly_rental }}</p>
