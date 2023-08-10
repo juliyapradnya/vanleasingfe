@@ -57,7 +57,8 @@
                     <p>Fleet Status : {{ item.status_next_step }}</p>
                     <p>Contract Start Date : {{ item.contract_start_date }}</p>
                     <p>Contract End Date : {{ item.vehicle_return_date }}</p>
-                    <p>Sold Date : {{  }}</p>
+                    <p v-if="item.next_step == 'Sold'" >Sold Date : {{ item.vehicle_return_date }}</p>
+                    <p v-else>Sold Date : - </p>
                     <p>Annual Mileage : {{ item.annual_mileage }}</p>
                     <p>Monthly Rental : {{ item.monthly_rental }}</p>
                     <p>Total Income : {{ item.total_income_new }}</p>
@@ -66,7 +67,7 @@
                     <p>Rental Income : {{ item.rental_income }}</p>
                     <p>Monthly Rental : {{ item.monthly_rental }}</p>
                     <p>Term Period : {{ item.margin_term }}</p>
-                    <p v-if="item.next_step_status_sales == 'Sold'">
+                    <p v-if="item.next_step == 'Sold'">
                       Sold Price : {{ item.sold_price }}
                     </p>
                     <p>Financing Amount : {{ item.financing_amount }}</p>
