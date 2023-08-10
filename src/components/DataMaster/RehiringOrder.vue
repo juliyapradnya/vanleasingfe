@@ -43,14 +43,7 @@
 
         <v-card-text>
           <v-form v-model="valid" ref="form">
-            <v-select
-              v-model="form.next_step"
-              :items="['Rehiring']"
-              label="Re-hire Next Step"
-              :rules="nextStepRules"
-              outlined
-              required
-            ></v-select>
+            
 
             <v-select
               v-if="inputType == 'Add'"
@@ -183,7 +176,7 @@ export default {
         },
       ],
       headers: [
-        { text: "Re-hire Next Step", value: "next_step" },
+        //{ text: "Re-hire Next Step", value: "next_step" },
         { text: "Original Sales Order Number", value: "agreement_number" },
         //{ text: "New Sales Order No. (If Re-Hire)", value: "new_sales_order_no" },
         { text: "Vehicle Registration Number", value: "vehicle_registration" },
@@ -199,7 +192,7 @@ export default {
       listPurchaseOrders: [],
       listPurchaseOrdersCopy: [],
       form: {
-        next_step: null,
+        //next_step: null,
         id_sales_order: null,
         new_sales_order_no: null,
         id_purchase_order: null,
@@ -305,7 +298,7 @@ export default {
     save() {
       console.log(this.form.new_sales_order_no)
       if (this.$refs.form.validate()) {
-        this.rehiringorders.append("next_step", this.form.next_step);
+        //this.rehiringorders.append("next_step", this.form.next_step);
         this.rehiringorders.append("id_sales_order", this.form.id_sales_order);
         //this.rehiringorders.append("new_sales_order_no",this.form.new_sales_order_no);
         this.rehiringorders.append("id_purchase_order",this.form.id_purchase_order);
@@ -342,7 +335,7 @@ export default {
     //ubah
     update() {
       let newData = {
-        next_step: this.form.next_step,
+        //next_step: this.form.next_step,
         id_sales_order: this.form.id_sales_order,
         new_sales_order_no: this.form.new_sales_order_no,
         id_purchase_order: this.form.id_purchase_order,
@@ -430,7 +423,7 @@ export default {
 
       this.inputType = "Update";
       this.editId = item.id;
-      this.form.next_step = item.next_step;
+      //this.form.next_step = item.next_step;
       this.form.id_sales_order = item.id_sales_order;
       this.form.new_sales_order_no = item.new_sales_order_no;
       this.form.id_purchase_order = item.id_purchase_order;

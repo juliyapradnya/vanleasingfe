@@ -22,7 +22,7 @@
         </v-btn>
       </v-card-title>
 
-      <v-data-table :headers="headers" :items="rehiringordervehiclesold" :search="search">
+      <v-data-table :headers="headers" :items="vehiclesold" :search="search">
         <template v-slot:[`item.actions`]="{ item }">
           <v-btn color="blue" fab dark x-small @click="editHandler(item)">
             <v-icon>mdi-circle-edit-outline</v-icon>
@@ -43,15 +43,6 @@
 
         <v-card-text>
           <v-form v-model="valid" ref="form">
-            <v-select
-              v-model="form.next_step"
-              :items="['Sold']"
-              label="Sold Next Step"
-              :rules="nextStepRules"
-              outlined
-              required
-            ></v-select>
-
             <v-select
               v-if="inputType == 'Add'"
               v-model="form.id_sales_order"
@@ -108,8 +99,8 @@
             >
               <template v-slot:activator="{ on, attrs }">
                 <v-text-field
-                  v-model="form.vehicle_return_date"
-                  label="Sold Vehicle Return Date"
+                  v-model="form.vehicle_sold_date"
+                  label="Vehicle Sold Date"
                   prepend-icon="mdi-calendar"
                   readonly
                   v-bind="attrs"
@@ -118,7 +109,7 @@
                 ></v-text-field>
               </template>
               <v-date-picker
-                v-model="form.vehicle_return_date"
+                v-model="form.vehicle_sold_date"
                 @input="menu1 = false"
               ></v-date-picker>
             </v-menu>
@@ -149,7 +140,7 @@
           <span class="headline">warning!</span>
         </v-card-title>
         <v-card-text>
-          Anda yakin ingin menghapus data rehiring order ini?
+          Anda yakin ingin menghapus data vehicle sold ini?
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -194,35 +185,33 @@ export default {
         },
       ],
       headers: [
-        { text: "Sold Next Step", value: "next_step" },
         { text: "Original Sales Order Number", value: "agreement_number" },
         { text: "Vehicle Registration Number", value: "vehicle_registration" },
-        { text: "Sold Vehicle Return Date", value: "vehicle_return_date" },
+        { text: "Sold Vehicle Return Date", value: "vehicle_sold_date" },
         { text: "Sold Price", value: "sold_price" },
         { text: "Actions", value: "actions" },
       ],
-      rehiringorders: new FormData(),
-      rehiringorder: [],
+      vehiclesolds: new FormData(),
+      vehiclesold: [],
       purchaseorders: [],
       salesorders: [],
-      rehiringordervehiclesold:[],
+      
       listSalesOrders: [],
       listSalesOrdersCopy: [],
       listPurchaseOrders: [],
       listPurchaseOrdersCopy: [],
       form: {
-        next_step: null,
         id_sales_order: null,
         id_purchase_order: null,
-        vehicle_return_date: null,
+        vehicle_sold_date: null,
         sold_price: null,
       },
-      nextStepRules: [(v) => !!v || "Next Step Be Required"],
+      //nextStepRules: [(v) => !!v || "Next Step Be Required"],
       soldPriceRules: [(v) => !!v || "Sold Price Must Be Required"],
-      vehicleReturnDateRules: [(v) => !!v || "Sold Price Must Be Required"],
+      vehicleReturnDateRules: [(v) => !!v || "Vehicle Sold Date Must Be Required"],
       deleteId: "",
       editId: "",
-      vehicle_return_date: new Date().toISOString().substr(0, 10),
+      vehicle_sold_date: new Date().toISOString().substr(0, 10),
     };
   },
   methods: {
@@ -235,7 +224,7 @@ export default {
     },
     //read data
     readData() {
-      var url = this.$api + "/rehiringorder";
+      var url = this.$api + "/vehiclesold";
       this.$http
         .get(url, {
           headers: {
@@ -243,7 +232,7 @@ export default {
           },
         })
         .then((response) => {
-          this.rehiringorder = response.data.data;
+          this.vehiclesold = response.data.data;
         });
     },
 
@@ -276,7 +265,7 @@ export default {
     },
 
     readDataVehicleSold() {
-      var url = this.$api + "/showvehiclesold";
+      var url = this.$api + "/vehiclesold";
       this.$http
         .get(url, {
           headers: {
@@ -284,7 +273,7 @@ export default {
           },
         })
         .then((response) => {
-          this.rehiringordervehiclesold = response.data.data;
+          this.vehiclesold = response.data.data;
         });
     },
 
@@ -317,16 +306,15 @@ export default {
     //simpan data produk
     save() {
       if (this.$refs.form.validate()) {
-        this.rehiringorders.append("next_step", this.form.next_step);
-        this.rehiringorders.append("id_sales_order", this.form.id_sales_order);
-        this.rehiringorders.append("id_purchase_order",this.form.id_purchase_order);
-        this.rehiringorders.append("vehicle_return_date",this.form.vehicle_return_date);
-        this.rehiringorders.append("sold_price", this.form.sold_price);
+        this.vehiclesolds.append("id_sales_order", this.form.id_sales_order);
+        this.vehiclesolds.append("id_purchase_order",this.form.id_purchase_order);
+        this.vehiclesolds.append("vehicle_sold_date",this.form.vehicle_sold_date);
+        this.vehiclesolds.append("sold_price", this.form.sold_price);
 
-        var url = this.$api + "/rehiringorder";
+        var url = this.$api + "/vehiclesold";
         this.load = true;
         this.$http
-          .post(url, this.rehiringorders, {
+          .post(url, this.vehiclesolds, {
             headers: {
               Authorization: "Bearer " + localStorage.getItem("token"),
             },
@@ -354,13 +342,12 @@ export default {
     //ubah
     update() {
       let newData = {
-        next_step: this.form.next_step,
         id_sales_order: this.form.id_sales_order,
         id_purchase_order: this.form.id_purchase_order,
-        vehicle_return_date: this.form.vehicle_return_date,
+        vehicle_sold_date: this.form.vehicle_sold_date,
         sold_price: this.form.sold_price,
       };
-      var url = this.$api + "/updatevehiclesold/" + this.editId;
+      var url = this.$api + "/vehiclesold/" + this.editId;
       this.load = true;
       this.$http
         .put(url, newData, {
@@ -396,7 +383,7 @@ export default {
     //hapus
     deleteData() {
       //mengahapus data
-      var url = this.$api + "/rehiringorder/" + this.deleteId;
+      var url = this.$api + "/vehiclesold/" + this.deleteId;
       //data dihapus berdasarkan id
       this.$http
         .delete(url, {
@@ -443,10 +430,9 @@ export default {
 
       this.inputType = "Update";
       this.editId = item.id;
-      this.form.next_step = item.next_step;
       this.form.id_sales_order = item.id_sales_order;
       this.form.id_purchase_order = item.id_purchase_order;
-      this.form.vehicle_return_date = item.vehicle_return_date;
+      this.form.vehicle_sold_date = item.vehicle_sold_date;
       this.form.sold_price = item.sold_price;
       this.dialog = true;
     },

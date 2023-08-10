@@ -38,8 +38,7 @@ export default {
       dialogConfirm: false,
       menu1: false,
       headers: [
-        
-
+      
         { text: "Vehicle No. Support", value: "vehicle_registration" , width: '100px' , border: '6px'},
 
         { text: "Contract Type", value: "type" , width: '150px'},
@@ -51,6 +50,7 @@ export default {
         
         //{ text: "New Sales Order No", value: "new_sales_order_no" },
         { text: "Vehicle Return Date", value: "vehicle_return_date" , width: '125px'},
+        { text: "Vehicle Sold Date", value: "vehicle_sold_date" , width: '125px'},
 
         { text: "Hire Purchase Name", value: "hp_finance_provider" , width: '125px' },
 
