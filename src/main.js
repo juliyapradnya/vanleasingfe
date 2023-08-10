@@ -15,8 +15,8 @@ moment.tz.guess();
 Vue.use(VueMoment, { moment });
 
 Vue.prototype.$http = axios;
-//Vue.prototype.$api = 'https://apivl.piomenosystem.com/api';
-Vue.prototype.$api = 'http://127.0.0.1:8000/api';
+Vue.prototype.$api = 'https://apivl.piomenosystem.com/api';
+//Vue.prototype.$api = 'http://127.0.0.1:8000/api';
 
 
 //h
