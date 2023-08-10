@@ -67,7 +67,7 @@
                     <p>Rental Income : {{ item.rental_income }}</p>
                     <p>Monthly Rental : {{ item.monthly_rental }}</p>
                     <p>Term Period : {{ item.margin_term }}</p>
-                    <p v-if="item.next_step == 'Sold'">
+                    <p v-if="item.next_step_status_sales == 'Sold'">
                       Sold Price : {{ item.sold_price }}
                     </p>
                     <p>Financing Amount : {{ item.financing_amount }}</p>
