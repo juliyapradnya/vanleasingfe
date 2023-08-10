@@ -197,9 +197,9 @@ export default {
         new_sales_order_no: null,
         id_purchase_order: null,
         vehicle_return_date: null,
-        sold_price: null,
+       //sold_price: null,
       },
-      nextStepRules: [(v) => !!v || "Next Step Be Required"],
+      //nextStepRules: [(v) => !!v || "Next Step Be Required"],
       originalSalesOrderNoRules: [
         (v) => !!v || "Original Sales Order Number Must Be Required",
       ],
@@ -340,7 +340,7 @@ export default {
         new_sales_order_no: this.form.new_sales_order_no,
         id_purchase_order: this.form.id_purchase_order,
         vehicle_return_date: this.form.vehicle_return_date,
-        sold_price: this.form.sold_price,
+        //sold_price: this.form.sold_price,
       };
       var url = this.$api + "/rehiringorder/" + this.editId;
       this.load = true;
@@ -428,7 +428,7 @@ export default {
       this.form.new_sales_order_no = item.new_sales_order_no;
       this.form.id_purchase_order = item.id_purchase_order;
       this.form.vehicle_return_date = item.vehicle_return_date;
-      this.form.sold_price = item.sold_price;
+      //this.form.sold_price = item.sold_price;
       this.dialog = true;
     },
     deleteHandler(id) {
