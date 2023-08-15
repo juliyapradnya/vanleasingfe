@@ -156,6 +156,8 @@
                     <p>Total Cost           : {{ item.sum_total_cost }}</p>
                     <p>Fleet Margin         : {{ item.margin }}</p>
                     <p>Total Rental Income  : {{ item.sum_rental_income }}</p>
+                    <p>Sold Price                  : {{ item.sold_price }}</p>
+                    <p>Residual Value Projection   : {{ item.residual_value }}</p>
                   </v-card-subtitle>
                 </v-card>
               </v-col>
