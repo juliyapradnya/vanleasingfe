@@ -23,7 +23,9 @@
         :search="search"
       >
         <template v-slot:[`item.actions`]="{ item }">
-          <v-btn color="#8abfa7" dark small @click="listVehicleById(item.id)">
+          <v-btn color="#8abfa7" dark small @click="listVehicleById(item.id)
+          listTotalFormulaById(item.id)
+          ">
             Show
           </v-btn>
         </template>
@@ -78,6 +80,30 @@
             </v-row>
           </v-container>
         </div>
+        <div>
+          <v-container>
+            <v-row dense>
+              <v-col
+                v-for="item in listTotalInCard"
+                :key="item.id"
+                cols="3"
+              >
+                <v-card color="#7ae582" class="mt-2">
+                  <v-card-title class="text-h5 font-weight-black">
+                    {{ item.vehicle_registration }}
+                  </v-card-title>
+                  <hr style="height: 2px" />
+                  <v-card-subtitle class="font-weight-black">
+                    <p>Total Income         : {{ item.sum_total_income }}</p>
+                    <p>Total Cost           : {{ item.sum_total_cost }}</p>
+                    <p>Fleet Margin         : {{ item.margin }}</p>
+                    <p>Total Rental Income  : {{ item.sum_rental_income }}</p>
+                  </v-card-subtitle>
+                </v-card>
+              </v-col>
+            </v-row>
+          </v-container>
+        </div>
         <v-card-actions class="justify-end"> </v-card-actions>
       </v-card>
     </v-dialog>
@@ -117,6 +143,7 @@ export default {
       //vehiclerehiringorder: [],
       vehiclepurchaseorder: [],
       listVehicleInVehicleCard: [],
+      listTotalInCard: [],
     };
   },
   methods: {
@@ -167,6 +194,27 @@ export default {
           this.dialogShowVehicle = true;
         });
     },
+
+    listTotalFormulaById(id) {
+      var url = this.$api + "/listtotalincard/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          this.listTotalInCard = response.data.data;
+          this.dialogShowVehicle = true;
+        });
+    },
+
+    // listHandler(item) {
+    //   this.id = item.id;
+    //   this.listVehicleInVehicleCard = response.data.data;
+    //   this.listTotalInCard = response.data.data;
+    //   this.dialogShowVehicle = true;
+    // },
 
     // readDataVehicleRehiringOrder() {
     //   var url = this.$api + "/showvehiclerehiringorder";
