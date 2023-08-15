@@ -64,7 +64,7 @@ export default {
         { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
         
         //{ text: "Vehicle Description", value: "vehicle_description" },
-        { text: "Total Income", value: "total_income_new" , width: '150px'},
+        { text: "Total Income", value: "total_income" , width: '150px'},
         { text: "Total Cost", value: "total_cost" , width: '150px'},
         { text: "Contract Margin", value: "contract_margin" , width: '150px'},
         { text: "Rental Income", value: "rental_income" , width: '150px'},
