@@ -29,7 +29,14 @@
           <v-btn color="#8abfa7" dark small class="mr-3" @click="listCostById(item.id)">
             Cost
           </v-btn>
-          <v-btn color="#8abfa7" dark small mx-2 @click="listTotalFormulaById(item.id)">
+          <v-btn color="#8abfa7" dark small mx-2 @click="listTotalIncomeById(item.id)
+          listTotalCostById(item.id)
+          listTotalRentalIncomeById(item.id)
+          listTotalOtherIncomeById(item.id)
+          listTotalOtherCostById(item.id)
+          listTotalSoldPriceById(item.id)
+          listTotalResidualValueById(item.id)"
+          >
             Fleet Margin
           </v-btn>
         </template>
@@ -142,22 +149,20 @@
           <v-container>
             <v-row dense>
               <v-col
-                v-for="item in listTotalInCard"
-                :key="item.id"
                 cols="3"
               >
                 <v-card color="#7ae582" class="mt-2">
                   <v-card-title class="text-h5 font-weight-black">
-                    {{ item.vehicle_registration }}
+                    
                   </v-card-title>
                   <hr style="height: 2px" />
                   <v-card-subtitle class="font-weight-black">
-                    <p>Total Income         : {{ item.sum_total_income }}</p>
-                    <p>Total Cost           : {{ item.sum_total_cost }}</p>
-                    <p>Fleet Margin         : {{ item.margin }}</p>
-                    <p>Total Rental Income  : {{ item.sum_rental_income }}</p>
-                    <p>Sold Price                  : {{ item.sold_price }}</p>
-                    <p>Residual Value Projection   : {{ item.residual_value }}</p>
+                    <p>Total Income         : {{ listTotalIncome + listTotalOtherIncome}}</p>
+                    <p>Total Cost           : {{ listTotalCost + listTotalOtherCost}}</p>
+                    <p>Fleet Margin         : {{ (listTotalIncome + listTotalOtherIncome) - (listTotalCost + listTotalOtherCost) }}</p>
+                    <p>Total Rental Income  : {{ listTotalRentalIncome }}</p>
+                    <p>Sold Price           : {{ listTotalSoldPrice }}</p>
+                    <p>Total Residual Value Projection   : {{ listTotalResidualValue }}</p>
                   </v-card-subtitle>
                 </v-card>
               </v-col>
@@ -196,6 +201,7 @@ export default {
       new_sales_order_no: null,
       vehicle_return_date: null,
       sold_price: null,
+      //sum_total_income: null,
       headers: [
         { text: "Vehicle Registration", value: "vehicle_registration"},
         { text: "Actions", value: "actions" , align: 'center' },
@@ -207,6 +213,13 @@ export default {
       listVehicleInVehicleCard: [],
       listCostInCard: [],
       listTotalInCard: [],
+      listTotalIncome: null,
+      listTotalCost: null,
+      listTotalRentalIncome: null,
+      listTotalOtherIncome: null,
+      listTotalOtherCost: null,
+      listTotalSoldPrice: null,
+      listTotalResidualValue: null,
     };
   },
   methods: {
@@ -285,6 +298,119 @@ export default {
           this.dialogShowMarginVehicle = true;
         });
     },
+
+    listTotalIncomeById(id) {
+      this.dialogShowMarginVehicle = true;
+      var url = this.$api + "/listtotalincome/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response.data.data.sum_total_income)
+          this.listTotalIncome = response.data.data.sum_total_income;
+          
+        });
+    },
+
+    listTotalCostById(id) {
+      this.dialogShowMarginVehicle = true;
+      var url = this.$api + "/listtotalcost/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response.data.data.sum_total_cost)
+          this.listTotalCost = response.data.data.sum_total_cost;
+          
+        });
+    },
+
+    listTotalRentalIncomeById(id) {
+      this.dialogShowMarginVehicle = true;
+      var url = this.$api + "/listrentalincome/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response.data.data.sum_rental_income)
+          this.listTotalRentalIncome = response.data.data.sum_rental_income;
+          
+        });
+    },
+
+    listTotalOtherIncomeById(id) {
+      this.dialogShowMarginVehicle = true;
+      var url = this.$api + "/listotherincome/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response.data.data.sum_other_income)
+          this.listTotalOtherIncome = response.data.data.sum_other_income;
+          
+        });
+    },
+
+    listTotalOtherCostById(id) {
+      this.dialogShowMarginVehicle = true;
+      var url = this.$api + "/listothercost/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response.data.data.sum_other_cost)
+          this.listTotalOtherCost = response.data.data.sum_other_cost;
+          
+        });
+    },
+
+    listTotalSoldPriceById(id) {
+      this.dialogShowMarginVehicle = true;
+      var url = this.$api + "/listsoldprice/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response.data.data.sum_sold_price)
+          this.listTotalSoldPrice = response.data.data.sum_sold_price;
+          
+        });
+    },
+
+    listTotalResidualValueById(id) {
+      this.dialogShowMarginVehicle = true;
+      var url = this.$api + "/listresidualvalue/" + id;
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response.data.data.sum_residual_value)
+          this.listTotalResidualValue = response.data.data.sum_residual_value;
+          
+        });
+    },
+
 
 
     // readDataVehicleRehiringOrder() {
