@@ -159,12 +159,31 @@
                   </v-card-title>
                   <hr style="height: 2px" />
                   <v-card-subtitle class="font-weight-black">
-                    <p>Total Income         : {{ listTotalIncome + listTotalOtherIncome}}</p>
-                    <p>Total Cost           : {{ listTotalCost + listTotalOtherCost}}</p>
-                    <p>Fleet Margin         : {{ (listTotalIncome + listTotalOtherIncome) - (listTotalCost + listTotalOtherCost) }}</p>
-                    <p>Total Rental Income  : {{ listTotalRentalIncome }}</p>
-                    <p>Sold Price           : {{ listTotalSoldPrice }}</p>
-                    <p>Total Residual Value Projection   : {{ listTotalResidualValue }}</p>
+                    <p v-if="listTotalIncome == null" >Total Income  : {{ 0 }}</p>
+                    <p v-else-if="listTotalOtherIncome == null" >Total Income  : {{ listTotalIncome }}</p>
+                    <p v-else-if="listTotalOtherIncome != null" > Total Income  : {{ (listTotalIncome) + (listTotalOtherIncome)}}</p>
+                    
+                    <p v-if="listTotalCost == null" >Total Cost  : {{ 0 }}</p>
+                    <p v-else-if="listTotalOtherCost == null" >Total Cost  : {{ listTotalCost }}</p>
+                    <p v-else-if="listTotalOtherCost != null">Total Cost  : {{ (listTotalCost) + (listTotalOtherCost)}}</p>
+                    
+                    <p v-if="listTotalIncome == null && listTotalCost == null" >Fleet Margin  : {{ 0 }}</p>
+                    <p v-else-if="listTotalIncome == null" >Fleet Margin  : {{ listTotalCost }}</p>
+                    <p v-else-if="listTotalCost == null" >Fleet Margin  : {{ listTotalIncome }}</p>
+                    <p v-else-if="listTotalOtherIncome == null && listTotalOtherCost == null" >Fleet Margin  : {{ listTotalIncome - listTotalCost }}</p>
+                    <p v-else-if="listTotalOtherIncome == null"> Fleet Margin  : {{ (listTotalIncome) - (listTotalCost + listTotalOtherCost)}}</p>
+                    <p v-else-if="listTotalOtherCost == null"> Fleet Margin  : {{ (listTotalIncome + listTotalOtherIncome) - (listTotalCost) }}</p>
+                    <p v-else-if="listTotalOtherIncome != null && listTotalOtherCost != null"> Fleet Margin  : {{ (listTotalIncome + listTotalOtherIncome) - (listTotalCost + listTotalOtherCost) }}</p>
+                    
+                    <p v-if="listTotalRentalIncome == null" >Total Rental Income  : {{ 0 }}</p>
+                    <p v-else>Total Rental Income  : {{ listTotalRentalIncome }}</p>
+                    
+                    <p v-if="listTotalSoldPrice == null" >Sold Price  : {{ 0 }}</p>
+                    <p v-else>Sold Price  : {{ listTotalSoldPrice }}</p>
+
+                    <p v-if="listTotalSoldPrice == null" >Total Residual Value Projection  : {{ 0 }}</p>
+                    <p v-else>Total Residual Value Projection  : {{ listTotalResidualValue }}</p>
+
                   </v-card-subtitle>
                 </v-card>
               </v-col>
@@ -203,7 +222,6 @@ export default {
       new_sales_order_no: null,
       vehicle_return_date: null,
       sold_price: null,
-      //sum_total_income: null,
       headers: [
         { text: "Vehicle Registration", value: "vehicle_registration"},
         { text: "Actions", value: "actions" , align: 'center' },
