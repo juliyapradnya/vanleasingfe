@@ -29,7 +29,9 @@
           <v-btn color="#8abfa7" dark small class="mr-3" @click="listCostById(item.id)">
             Cost
           </v-btn>
-          <v-btn color="#8abfa7" dark small mx-2 @click="listTotalIncomeById(item.id)
+          <v-btn color="#8abfa7" dark small mx-2 @click="
+          listTotalFormulaById(item.id)
+          listTotalIncomeById(item.id)
           listTotalCostById(item.id)
           listTotalRentalIncomeById(item.id)
           listTotalOtherIncomeById(item.id)
@@ -153,7 +155,7 @@
               >
                 <v-card color="#7ae582" class="mt-2">
                   <v-card-title class="text-h5 font-weight-black">
-                    
+                    {{ listVehicleNumber }}
                   </v-card-title>
                   <hr style="height: 2px" />
                   <v-card-subtitle class="font-weight-black">
@@ -220,6 +222,8 @@ export default {
       listTotalOtherCost: null,
       listTotalSoldPrice: null,
       listTotalResidualValue: null,
+      listVehicleNumber: null,
+      //listTotalInCard: null,
     };
   },
   methods: {
@@ -311,7 +315,7 @@ export default {
         .then((response) => {
           console.log(response.data.data.sum_total_income)
           this.listTotalIncome = response.data.data.sum_total_income;
-          
+          this.listVehicleNumber = response.data.data.vehicle_registration;
         });
     },
 
