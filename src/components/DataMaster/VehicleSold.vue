@@ -291,7 +291,7 @@ export default {
     },
 
     readDataSalesOrder() {
-      var url = this.$api + "/salesorder";
+      var url = this.$api + "/showagreementnumberinvehiclesold";
       this.$http
         .get(url, {
           headers: {
