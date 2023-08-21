@@ -181,7 +181,7 @@
                     <p v-if="listTotalSoldPrice == null" >Sold Price  : {{ 0 }}</p>
                     <p v-else>Sold Price  : {{ listTotalSoldPrice }}</p>
 
-                    <p v-if="listTotalSoldPrice == null" >Total Residual Value Projection  : {{ 0 }}</p>
+                    <p v-if="listTotalResidualValue == null" >Total Residual Value Projection  : {{ 0 }}</p>
                     <p v-else>Total Residual Value Projection  : {{ listTotalResidualValue }}</p>
 
                   </v-card-subtitle>
