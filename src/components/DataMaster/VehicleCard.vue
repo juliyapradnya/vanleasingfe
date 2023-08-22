@@ -165,15 +165,15 @@
                     
                     <p v-if="listTotalCost == null" >Total Cost  : {{ 0 }}</p>
                     <p v-else-if="listTotalOtherCost == null" >Total Cost  : {{ listTotalCost }}</p>
-                    <p v-else-if="listTotalOtherCost != null">Total Cost  : {{ (listTotalCost) + (listTotalOtherCost)}}</p>
+                    <p v-else-if="listTotalOtherCost != null">Total Cost  : {{ parseFloat(listTotalCost) + parseFloat(listTotalOtherCost)}}</p>
                     
                     <p v-if="listTotalIncome == null && listTotalCost == null" >Fleet Margin  : {{ 0 }}</p>
                     <p v-else-if="listTotalIncome == null" >Fleet Margin  : {{ listTotalCost }}</p>
                     <p v-else-if="listTotalCost == null" >Fleet Margin  : {{ listTotalIncome }}</p>
-                    <p v-else-if="listTotalOtherIncome == null && listTotalOtherCost == null" >Fleet Margin  : {{ listTotalIncome - listTotalCost }}</p>
-                    <p v-else-if="listTotalOtherIncome == null"> Fleet Margin  : {{ (listTotalIncome) - (listTotalCost + listTotalOtherCost)}}</p>
-                    <p v-else-if="listTotalOtherCost == null"> Fleet Margin  : {{ (listTotalIncome + listTotalOtherIncome) - (listTotalCost) }}</p>
-                    <p v-else-if="listTotalOtherIncome != null && listTotalOtherCost != null"> Fleet Margin  : {{ (listTotalIncome + listTotalOtherIncome) - (listTotalCost + listTotalOtherCost) }}</p>
+                    <p v-else-if="listTotalOtherIncome == null && listTotalOtherCost == null" >Fleet Margin  : {{ parseFloat(listTotalIncome) - parseFloat(listTotalCost) }}</p>
+                    <p v-else-if="listTotalOtherIncome == null"> Fleet Margin  : {{ parseFloat(listTotalIncome) - (parseFloat(listTotalCost) + parseFloat(listTotalOtherCost)) }}</p>
+                    <p v-else-if="listTotalOtherCost == null"> Fleet Margin  : {{ (parseFloat(listTotalIncome) + parseFloat(listTotalOtherIncome)) - parseFloat(listTotalCost) }}</p>
+                    <p v-else-if="listTotalOtherIncome != null && listTotalOtherCost != null"> Fleet Margin  : {{ (parseFloat(listTotalIncome) + parseFloat(listTotalOtherIncome)) - (parseFloat(listTotalCost) + parseFloat(listTotalOtherCost)) }}</p>
                     
                     <p v-if="listTotalRentalIncome == null" >Total Rental Income  : {{ 0 }}</p>
                     <p v-else>Total Rental Income  : {{ listTotalRentalIncome }}</p>
