@@ -159,8 +159,9 @@
                   </v-card-title>
                   <hr style="height: 2px" />
                   <v-card-subtitle class="font-weight-black">
-                    
-                    <p v-if="listTotalOtherIncome != null" > Total Income  : {{ listTotalIncome + listTotalOtherIncome }}</p>
+                    <p v-if="listTotalIncome == null" >Total Income  : {{ 0 }}</p>
+                    <p v-else-if="listTotalOtherIncome == null" >Total Income  : {{ listTotalIncome }}</p>
+                    <p v-else-if="listTotalOtherIncome != null" > Total Income  : {{ (listTotalIncome) + (listTotalOtherIncome) }}</p>
                     
                     <p v-if="listTotalCost == null" >Total Cost  : {{ 0 }}</p>
                     <p v-else-if="listTotalOtherCost == null" >Total Cost  : {{ listTotalCost }}</p>
