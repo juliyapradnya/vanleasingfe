@@ -126,7 +126,7 @@ export default {
 }
 
 .background {
-  background-image: url("../assets/uciha.jpg");
+  background-image: url("../assets/vanleasing.png");
   background-size: cover;
   
 }
