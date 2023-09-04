@@ -154,7 +154,9 @@
                     <p>Purchase Monthly Payment : {{ item.monthly_payment }}</p>
                     <p>Last Payment : {{ item.final_payment }}</p>
                     <p>Interest Type : {{ item.hp_interest_type }}</p>
-                    <p>Total Cost : {{ item.total_cost }}</p>
+
+                    <p v-if="item.total_cost != null">Total Cost : {{ item.total_cost }}</p>
+                    <p v-else>Total Cost : - </p>
                   </v-card-subtitle>
                 </v-card>
               </v-col>
