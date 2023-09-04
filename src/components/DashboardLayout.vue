@@ -66,13 +66,13 @@ export default {
       snackbar: false,
       items: [
         { text: "Dashboard", icon: "mdi-view-dashboard", to: "/dashboard" },
-        { text: "Purchase Order", icon: "mdi-account-group", to: "/purchaseorder" },
+        { text: "Purchase Order", icon: "mdi-car-back", to: "/purchaseorder" },
         { text: "Sales Order", icon: "mdi-car-hatchback", to: "/salesorder" },
-        { text: "Other Cost", icon: "mdi-text-box", to: "/othercost" },
-        { text: "Other Income", icon: "mdi-file-document-edit", to: "/otherincome" },
+        { text: "Other Cost", icon: "mdi-note", to: "/othercost" },
+        { text: "Other Income", icon: "mdi-note", to: "/otherincome" },
         { text: "Return/Sold Order", icon: "mdi-ticket-confirmation", to: "/rehiringorder" },
-        { text: "Vehicle Card", icon: "mdi-car-hatchback", to: "/vehiclecard" },
-        { text: "Compilation DB", icon: "mdi-car-hatchback", to: "/compilationdb" },
+        { text: "Vehicle Card", icon: "mdi-card-text", to: "/vehiclecard" },
+        { text: "Compilation DB", icon: "mdi-database", to: "/compilationdb" },
       ],
     };
   },
