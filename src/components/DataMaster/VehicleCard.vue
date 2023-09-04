@@ -67,23 +67,49 @@
                   </v-card-title>
                   <hr style="height: 2px" />
                   <v-card-subtitle class="font-weight-black">
-                    <p>Original Sales Order Number : {{ item.agreement_number }}</p>
-                    <p>Customer Name : {{ item.cust_name }}</p>
-                    <p>Contract Status : {{ item.next_step_status_sales }}</p>
-                    <p>Fleet Status : {{ item.status_next_step }}</p>
-                    <p>Contract Start Date : {{ item.contract_start_date }}</p>
-                    <p>Contract End Date : {{ item.vehicle_return_date }}</p>
+                    <p v-if="item.agreement_number != null">Original Sales Order Number : {{ item.agreement_number }}</p>
+                    <p v-else>Original Sales Order Number : - </p>
+
+                    <p v-if="item.cust_name != null">Customer Name : {{ item.cust_name }}</p>
+                    <p v-else>Customer Name : - </p>
+
+                    <p v-if="item.next_step_status_sales != null">Contract Status : {{ item.next_step_status_sales }}</p>
+                    <p v-else>Contract Status : - </p>
+
+                    <p v-if="item.status_next_step != null">Fleet Status : {{ item.status_next_step }}</p>
+                    <p v-else>Fleet Status : - </p>
+
+                    <p v-if="item.contract_start_date != null">Contract Start Date : {{ item.contract_start_date }}</p>
+                    <p v-else>Contract Start Date : - </p>
+
+                    <p v-if="item.vehicle_return_date != null">Contract End Date : {{ item.vehicle_return_date }}</p>
+                    <p v-else>Contract End Date : - </p>
+
                     <p v-if="item.next_step_status_sales == 'Sold'" >Sold Date : {{ item.vehicle_sold_date }}</p>
                     <p v-else>Sold Date : - </p>
-                    <p>Annual Mileage : {{ item.annual_mileage }}</p>
-                    <p>Monthly Rental : {{ item.monthly_rental }}</p>
-                    <p>Total Income : {{ item.total_income }}</p>
-                    <p>Rental Income : {{ item.rental_income }}</p>
-                    <p>Monthly Rental : {{ item.monthly_rental }}</p>
-                    <p>Term Period : {{ item.margin_term }}</p>
+
+                    <p v-if="item.annual_mileage != null">Annual Mileage : {{ item.annual_mileage }}</p>
+                    <p v-else>Annual Mileage : - </p>
+
+                    <p v-if="item.monthly_rental != null">Monthly Rental : {{ item.monthly_rental }}</p>
+                    <p v-else>Monthly Rental : - </p>
+
+                    <p v-if="item.total_income != null">Total Income : {{ item.total_income }}</p>
+                    <p v-else>Total Income : - </p>
+
+                    <p v-if="item.rental_income != null">Rental Income : {{ item.rental_income }}</p>
+                    <p v-else>Rental Income : - </p>
+
+                    <p v-if="item.monthly_rental != null">Monthly Rental : {{ item.monthly_rental }}</p>
+                    <p v-else>Monthly Rental : - </p>
+
+                    <p v-if="item.margin_term != null">Term Period : {{ item.margin_term }}</p>
+                    <p v-else>Term Period : - </p>
+
                     <p v-if="item.next_step_status_sales == 'Sold'">
                       Sold Price : {{ item.sold_price }}
                     </p>
+                    <p v-else>Sold Price : - </p>
                   </v-card-subtitle>
                 </v-card>
               </v-col>
