@@ -32,6 +32,14 @@ const router = new VueRouter({
                         component: importComponent('Dashboard'),
                     },
 
+                    //available stock
+                    {
+                        path: "/availablestock",
+                        name: "AvailableStock",
+                        meta: {title: 'AvailableStock'},
+                        component: importComponent('DataMaster/AvailableStock'),
+                    },
+
                     //Employee
                     {
                         path: "/salesorder",
@@ -92,6 +100,7 @@ const router = new VueRouter({
                         meta: {title: 'CompilationDB'},
                         component: importComponent('DataMaster/CompilationDB'),
                     },
+
 
                 ]
             },

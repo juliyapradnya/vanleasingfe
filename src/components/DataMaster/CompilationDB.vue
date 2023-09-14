@@ -1,6 +1,6 @@
 <template>
   <v-main class="list">
-    <h3 class="text-h3 font-weight-medium mb-5">Compilation DB</h3>
+    <h3 class="text-h3 font-weight-medium mb-5">Full Contract View</h3>
     <v-card>
       <v-card-title>
         <v-text-field
@@ -39,10 +39,10 @@ export default {
       menu1: false,
       headers: [
       
-        { text: "Vehicle No. Support", value: "vehicle_registration" , width: '100px' , border: '6px'},
+        { text: "Vehicle Registration (With Space)", value: "vehicle_registration" , width: '100px' , border: '6px'},
 
         { text: "Contract Type", value: "type" , width: '150px'},
-        { text: "Agreement Number", value: "agreement_number" , width: '100px'},
+        { text: "Agreement No (Last 4 Digits)", value: "agreement_number" , width: '100px'},
 
         //{ text: "Next Step", value: "next_step" },
         { text: "Vehicle Status", value: "status_next_step" , width: '150px'},
@@ -55,11 +55,11 @@ export default {
         { text: "Hire Purchase Name", value: "hp_finance_provider" , width: '125px' },
 
         { text: "Customer Name", value: "cust_name" , width: '150px'},
-        { text: "Prepared By", value: "sales_person" , width: '150px'},
+        //{ text: "Prepared By", value: "sales_person" , width: '150px'},
 
         { text: "Purchase Starting Date", value: "hire_purchase_starting_date" , width: '150px'},
         { text: "Sales Starting Date", value: "contract_start_date" , width: '125px'},
-        { text: "Vehicle Manufacturer", value: "vehicle_manufacturer" , width: '125px'},
+        { text: "Vehicle Manufacturer", value: "vehicle_manufactur" , width: '125px'},
         { text: "Vehicle Model", value: "vehicle_model" , width: '150px'},
         { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
         
@@ -87,23 +87,23 @@ export default {
 
         { text: "Sold Price", value: "sold_price" , width: '125px'},
 
-        { text: "Annual Mileage", value: "annual_mileage" , width: '150px'},
-        { text: "Period Term (months)", value: "term_months" , width: '150px'},
+        { text: "Delivery  Mileage", value: "annual_mileage" , width: '150px'},
+        { text: "Contract Period (Months)", value: "term_months" , width: '150px'},
         { text: "Rental Advance (GBP)", value: "initial_rental" , width: '150px'},
         { text: "Price Otr", value: "price_otr" , width: '125px'},
         { text: "Documentation Fee", value: "documentation_fees" , width: '125px'},
-        { text: "Sales Monthly Rental", value: "monthly_rental" , width: '125px'},
+        { text: "Monthly Rental (Excl VAT)", value: "monthly_rental" , width: '125px'},
         { text: "Initial Other Income", value: "other_income" , width: '125px'},
         
         
-        { text: "Interest Rate Percentage", value: "hp_interest_per_annum" , width: '125px'},
+        { text: "Interest Rate P.A. (%) ", value: "hp_interest_per_annum" , width: '125px'},
         { text: "Deposit", value: "hp_deposit_amount" , width: '125px'},
         { text: "Period Term (months)", value: "hp_term" , width: '125px'},
         { text: "Documentation Fee", value: "documentation_fees_pu" , width: '125px'},
         { text: "Final Fee", value: "final_fees" , width: '125px'},
         { text: "Other Fee", value: "other_fees" , width: '125px'},
         { text: "Sales Monthly Payment", value: "monthly_payment" , width: '125px'},
-        { text: "Last Payment", value: "final_payment" , width: '125px'},
+        { text: "Final Payment", value: "final_payment" , width: '125px'},
         { text: "Interest Type", value: "hp_interest_type" , width: '125px'},
 
         //{ text: "Description Expenses", value: "description_expenses" },
