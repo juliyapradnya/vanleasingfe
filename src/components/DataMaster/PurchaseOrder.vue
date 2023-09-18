@@ -571,7 +571,51 @@ export default {
     //simpan data produk
     save() {
       if (this.$refs.form.validate()) {
-        console.log(this.form.id_sales_order)
+        console.log(this.form.hp_interest_per_annum)
+        if(this.form.hp_interest_per_annum == null){
+          this.form.hp_interest_per_annum = 0
+        }
+
+        if(this.form.hp_deposit_amount == null){
+          this.form.hp_deposit_amount = 0
+        }
+
+        if(this.form.hp_term == null){
+          this.form.hp_term = 0
+        }
+
+        if(this.form.documentation_fees_pu == null){
+          this.form.documentation_fees_pu = 0
+        }
+
+        if(this.form.final_fees == null){
+          this.form.final_fees = 0
+        }
+
+        if(this.form.other_fees == null){
+          this.form.other_fees = 0
+        }
+
+        if(this.form.price_otr == null){
+          this.form.price_otr = 0
+        }
+        
+        if(this.form.monthly_payment == null){
+          this.form.monthly_payment = 0
+        }
+
+        if(this.form.final_payment == null){
+          this.form.final_payment = 0
+        }
+
+        if(this.form.hp_interest_type == null){
+          this.form.hp_interest_type = "-"
+        }
+
+        if(this.form.hp_finance_provider == null){
+          this.form.hp_finance_provider = "-"
+        }
+
         //this.purchaseorders.append("id_sales_order", this.form.id_sales_order);
         this.purchaseorders.append("purchase_method", this.form.purchase_method);
         this.purchaseorders.append("vehicle_registration", this.form.vehicle_registration);
@@ -601,6 +645,7 @@ export default {
         this.purchaseorders.append("service_schedule_years", this.form.service_schedule_years);
         this.purchaseorders.append("last_service_mileage", this.form.last_service_mileage);
         this.purchaseorders.append("last_service_date", this.form.last_service_date);
+
         var url = this.$api + "/purchaseorder";
         this.load = true;
         this.$http
@@ -614,6 +659,17 @@ export default {
             this.color = "green";
             this.snackbar = true;
             this.load = false;
+            this.form.hp_interest_per_annum = null;
+            this.form.hp_deposit_amount = null;
+            this.form.hp_term = null;
+            this.form.documentation_fees_pu = null;
+            this.form.final_fees = null;
+            this.form.other_fees = null;
+            this.form.price_otr = null;
+            this.form.monthly_payment = null;
+            this.form.final_payment = null;
+            this.form.hp_interest_type = null;
+            this.form.hp_finance_provider = null;
             this.close();
             this.readData(); //mengambil data
             this.readDataSalesOrder();

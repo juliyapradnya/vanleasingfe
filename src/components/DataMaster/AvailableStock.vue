@@ -43,7 +43,7 @@ export default {
         { text: "Vehicle Manufacturer", value: "vehicle_manufactur" , width: '125px'},
         { text: "Vehicle Model", value: "vehicle_model" , width: '150px'},
         { text: "Vehicle Variant", value: "vehicle_variant" , width: '200px'},
-        { text: "Available Date", value: "hire_purchase_starting_date" , width: '150px'},
+        { text: "Available Date", value: "tgl_available" , width: '150px'},
         
         
       ],
