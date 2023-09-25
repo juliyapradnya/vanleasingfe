@@ -191,6 +191,19 @@ export default {
           this.mileage = response.data.data;
         });
     },
+
+    readDataPurchaseOrder() {
+      var url = this.$api + "/purchaseorder";
+      this.$http
+        .get(url, {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          this.purchaseorders = response.data.data;
+        });
+    },
     
     //simpan data produk
     save() {
@@ -214,6 +227,7 @@ export default {
             this.load = false;
             this.close();
             this.readData();
+            this.readDataPurchaseOrder();
             this.resetForm();
           })
           .catch((error) => {
@@ -246,6 +260,7 @@ export default {
           this.load = false;
           this.close();
           this.readData();
+          this.readDataPurchaseOrder();
           this.resetForm();
           this.inputType = "Add";
         })
@@ -274,6 +289,7 @@ export default {
           this.load = false;
           this.close();
           this.readData(); 
+          this.readDataPurchaseOrder();
           this.resetForm();
           this.inputType = "Add";
         })
@@ -318,6 +334,7 @@ export default {
   },
   mounted() {
     this.readData();
+    this.readDataPurchaseOrder();
   },
 };
 </script>
