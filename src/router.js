@@ -22,6 +22,103 @@ const router = new VueRouter({
             },
             {
                 path: "/",
+                component: importComponent('SuperAdminLayout'),
+                children: [
+                    //Dashboard
+                    {
+                        path: "/superadmindashboard",
+                        name: "SuperAdminDashboard",
+                        meta: {title: 'SuperAdminDashboard'},
+                        component: importComponent('Dashboard'),
+                    },
+
+                    //available stock
+                    {
+                        path: "/superadminavailablestock",
+                        name: "SuperAdminAvailableStock",
+                        meta: {title: 'SuperAdminAvailableStock'},
+                        component: importComponent('DataMaster/AvailableStock'),
+                    },
+
+                    //Employee
+                    {
+                        path: "/superadminsalesorder",
+                        name: "SuperAdminSalesOrder",
+                        meta: {title: 'SuperAdminSalesOrder'},
+                        component: importComponent('DataMaster/SalesOrder'),
+                    },
+
+                    //Project
+                    {
+                        path: "/superadminpurchaseorder",
+                        name: "SuperAdminPurchaseOrder",
+                        meta: {title: 'SuperAdminPurchaseOrder'},
+                        component: importComponent('DataMaster/PurchaseOrder'),
+                    },
+
+                    //Ticket
+                    {
+                        path: "/superadminothercost",
+                        name: "SuperAdminOtherCost",
+                        meta: {title: 'SuperAdminOtherCost'},
+                        component: importComponent('DataMaster/OtherCost'),
+                    },
+
+                    //Task
+                    {
+                        path: "/superadminotherincome",
+                        name: "SuperAdminOtherIncome",
+                        meta: {title: 'SuperAdminOtherIncome'},
+                        component: importComponent('DataMaster/OtherIncome'),
+                    },
+
+                    //Assignee
+                    {
+                        path: "/superadminrehiringorder",
+                        name: "SuperAdminRehiringOrder",
+                        meta: {title: 'SuperAdminRehiringOrder'},
+                        component: importComponent('DataMasterSuperAdmin/RehiringOrder'),
+                    },
+
+                    {
+                        path: "/superadminvehiclesold",
+                        name: "SuperAdminVehicleSold",
+                        meta: {title: 'SuperAdminVehicleSold'},
+                        component: importComponent('DataMasterSuperAdmin/VehicleSold'),
+                    },
+
+                    {
+                        path: "/superadminvehiclecard",
+                        name: "SuperAdminVehicleCard",
+                        meta: {title: 'SuperAdminVehicleCard'},
+                        component: importComponent('DataMaster/VehicleCard'),
+                    },
+
+                    {
+                        path: "/superadmincompilationdb",
+                        name: "SuperAdminCompilationDB",
+                        meta: {title: 'SuperAdminCompilationDB'},
+                        component: importComponent('DataMaster/CompilationDB'),
+                    },
+
+                    {
+                        path: "/superadminmileage",
+                        name: "SuperAdminMileage",
+                        meta: {title: 'SuperAdminMileage'},
+                        component: importComponent('DataMaster/Mileage'),
+                    },
+
+                    {
+                        path: "/superadminlaporan",
+                        name: "SuperAdminLaporan",
+                        meta: {title: 'SuperAdminLaporan'},
+                        component: importComponent('DataMaster/Laporan'),
+                    },
+                ]
+            },
+
+            {
+                path: "/",
                 component: importComponent('DashboardLayout'),
                 children: [
                     //Dashboard
@@ -101,6 +198,12 @@ const router = new VueRouter({
                         component: importComponent('DataMaster/CompilationDB'),
                     },
 
+                    {
+                        path: "/mileage",
+                        name: "Mileage",
+                        meta: {title: 'Mileage'},
+                        component: importComponent('DataMaster/Mileage'),
+                    },
 
                 ]
             },

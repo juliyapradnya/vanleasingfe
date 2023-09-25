@@ -4,7 +4,7 @@
       <v-layout flex align-center justify-center>
         <v-flex xs12 sm4 elevation-6>
           <v-card-title id="titleHeader">
-              <span id="titleLogin">STRATEGY INSTITUTE</span>
+              <span id="titleLogin">VAN LEASING</span>
             <img id="logoLogin" src="../assets/vanleasing.png" width="200" height="200" alt="Kitten">
             
           </v-card-title>
@@ -86,15 +86,23 @@ export default {
           .then((response) => {
             localStorage.setItem("id", response.data.user.id); //menyimpan id user yang sedang login
             localStorage.setItem("token", response.data.access_token); //menyimpan auth token
-
+            localStorage.setItem("username",response.data.user.username);
+            localStorage.setItem("position",response.data.user.position);
             this.error_message = response.data.message;
             this.color = "green";
             this.snackbar = true;
             this.load = false;
             this.clear();
-            this.$router.push({
-              name: "Dashboard",
-            });
+            if (response.data.user.position == "admin") {
+                  this.$router.push({
+                      name: "Dashboard"
+                  });
+              } else if(response.data.user.position == "super admin") {
+                  this.$router.push({
+                       name: "SuperAdminDashboard"
+                  });
+              
+              }
           })
           .catch((error) => {
             this.error_message = error.response.data.message;
@@ -138,15 +146,15 @@ export default {
 
 #titleLogin {
   color: rgb(57, 117, 173);
-  margin-left: 10px;
+  margin-left: 110px;
   margin-bottom: 50px;
   font-family: "Jolly%20Lodger";
-  font-size: 23px;
+  font-size: 30px;
   
 }
 
 #logoLogin {
-  margin-left: 120px;
+  margin-left: 110px;
 }
 #titleHeader {
   background-color: rgb(255, 255, 255);
