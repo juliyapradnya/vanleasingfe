@@ -4,7 +4,7 @@
       <v-list-item three-line>
         <v-list-item-content>
           <v-list-item-title class="text-h3 mb-1">
-            LAPORAN
+            Print PDF
           </v-list-item-title>
         </v-list-item-content>
       </v-list-item>
@@ -19,7 +19,7 @@
 
       <v-dialog v-model="dialogLaporanHarian" persistent max-width="500px">
         <v-card>
-          <span class="headline">{{ formTitle }} Laporan </span>
+          <span class="headline">{{ formTitle }} Print PDF </span>
 
           <v-card-text>
             <v-form v-model="valid" ref="form">

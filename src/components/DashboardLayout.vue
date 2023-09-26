@@ -74,7 +74,7 @@ export default {
         { text: "Additional Income", icon: "mdi-cash", to: "/otherincome" },
         { text: "Vehicle Performance", icon: "mdi-card-text", to: "/vehiclecard" },
         { text: "Full Contract View", icon: "mdi-database", to: "/compilationdb" },
-        { text: "Mileage", icon: "mdi-database", to: "/mileage" },
+        { text: "Mileage", icon: "mdi-car-info", to: "/mileage" },
       ],
     };
   },

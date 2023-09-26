@@ -74,8 +74,8 @@ export default {
         { text: "Additional Income", icon: "mdi-cash", to: "/superadminotherincome" },
         { text: "Vehicle Performance", icon: "mdi-card-text", to: "/superadminvehiclecard" },
         { text: "Full Contract View", icon: "mdi-database", to: "/superadmincompilationdb" },
-        { text: "Mileage", icon: "mdi-database", to: "/superadminmileage" },
-        { text: "Laporan", icon: "mdi-database", to: "/superadminlaporan" },
+        { text: "Mileage", icon: "mdi-car-info", to: "/superadminmileage" },
+        { text: "Print PDF", icon: "mdi-file-download-outline", to: "/superadminlaporan" },
       ],
     };
   },
