@@ -20,7 +20,7 @@
         </v-btn>
       </v-card-title>
 
-      <v-data-table :headers="headers" :items="purchaseorders" :search="search">
+      <v-data-table :headers="headers" :items="mileage" :search="search">
         <template v-slot:[`item.actions`]="{ item }">
           <v-btn color="blue" fab dark x-small @click="editHandler(item)">
             <v-icon>mdi-circle-edit-outline</v-icon>
@@ -28,12 +28,6 @@
 
           <v-btn color="red" fab dark x-small @click="deleteHandler(item.id)">
             <v-icon>mdi-trash-can</v-icon>
-          </v-btn>
-
-          <v-btn color="#8abfa7" dark small mx-2 @click="
-          listMileageById(item.id)"
-          >
-            show
           </v-btn>
 
         </template>
@@ -133,43 +127,6 @@
       </v-card>
     </v-dialog>
 
-    <v-dialog v-model="dialogShowMileageById" persistent max-width="800px">
-      <v-card>
-        <v-toolbar dark color="#25a244">
-          <h3 class="text-h5 font-weight-black">
-            {{ vehiclenumber }}
-          </h3>
-          <v-spacer></v-spacer>
-          <v-btn icon dark @click="dialogShowMileageById = false"
-            ><v-icon>mdi-close</v-icon></v-btn
-          >
-        </v-toolbar>
-        <v-data-table :headers="headersInCard" :items="listmileagebyid" :search="search">
-          <template v-slot:top>
-            <v-text-field
-              v-model="search"
-              clearable
-              flat
-              solo-inverted
-              hide-details
-              prepend-inner-icon="mdi-magnify"
-              label="Search"
-            ></v-text-field>
-          </template>
-          <template v-slot:[`item.actions`]="{ item }">
-            <v-btn color="blue" fab dark x-small @click="editHandler(item)">
-            <v-icon>mdi-circle-edit-outline</v-icon>
-          </v-btn>
-
-          <v-btn color="red" fab dark x-small @click="deleteHandler(item.id)">
-            <v-icon>mdi-trash-can</v-icon>
-          </v-btn>
-          </template>
-        </v-data-table>
-        <v-card-actions class="justify-end"> </v-card-actions>
-      </v-card>
-    </v-dialog>
-
     <v-snackbar v-model="snackbar" :color="color" timeout="2000" bottom>
       {{ error_message }}
     </v-snackbar>
@@ -188,29 +145,20 @@ export default {
       search: null,
       dialog: false,
       dialogConfirm: false,
-      dialogShowMileageById: false,
+      dialogShowData: false,
       menu1: false,
       headers: [
-        //{ text: "Date", value: "tgl_mileage" },
-        { text: "Vehicle Registration Number", value: "vehicle_registration" },
-        //{ text: "Mileage", value: "jumlah_mileage" },
-        { text: "Actions", value: "actions" },
-      ],
-      headersInCard: [
         { text: "Date", value: "tgl_mileage" },
-        //{ text: "Vehicle Registration Number", value: "vehicle_registration" },
+        { text: "Vehicle Registration Number", value: "vehicle_registration" },
         { text: "Mileage", value: "jumlah_mileage" },
         { text: "Actions", value: "actions" },
       ],
       mileages: new FormData(),
       mileage: [],
-      purchaseorders: [],
-      listmileagebyid: [],
-      vehiclenumber: null,
       form: {
         id_purchase_order: null,
         tgl_mileage: null,
-        vehicle_registration: null,
+        vehicle_registration_number: null,
         jumlah_mileage: null,
         
       },
@@ -254,21 +202,6 @@ export default {
         })
         .then((response) => {
           this.purchaseorders = response.data.data;
-        });
-    },
-
-    listMileageById(id) {
-      this.dialogShowMileageById = true;
-      var url = this.$api + "/listmileagebyid/" + id;
-      this.$http
-        .get(url, {
-          headers: {
-            Authorization: "Bearer " + localStorage.getItem("token"),
-          },
-        })
-        .then((response) => {
-          this.listmileagebyid = response.data.data;
-          this.vehiclenumber = response.data.data.vehicle_registration;
         });
     },
     
