@@ -90,6 +90,15 @@
                   persistent-hint
               ></v-text-field>
               <v-text-field
+                  v-model="form.residual_value"
+                  label="Residual Value Projection"
+                  outlined
+                  :rules="residualValueRules"
+                  required
+                  hint="Must be a number"
+                  persistent-hint
+              ></v-text-field>
+              <v-text-field
                   v-model="form.price_otr"
                   label="Price OTR (Excl VAT)"
                   outlined
@@ -439,6 +448,7 @@ export default {
         { text: "Vehicle Model", value: "vehicle_model" },
         { text: "Vehicle Variant", value: "vehicle_variant" },
         { text: "Basic List Price", value: "basic_list_price" },
+        { text: "Residual Value Projection", value: "residual_value" },
         { text: "Colour", value: "colour" },
         { text: "Minimum Contract Price (10k MPA)", value: "min_contract_price_satu" },
         { text: "Minimum Contract Price (18k MPA)", value: "min_contract_price_dua" },
@@ -476,6 +486,7 @@ export default {
         vehicle_model: null,
         vehicle_variant: null,
         basic_list_price: null,
+        residual_value: null,
         colour: null,
         min_contract_price_satu: null,
         min_contract_price_dua: null,
@@ -505,6 +516,7 @@ export default {
       vehicleModelRules: [(v) => !!v || "Vehicle Model must be required"],
       vehicleVariantRules: [(v) => !!v || "Vehicle variant must be required"],
       basicListPriceRules: [(v) => !!v || "Basic List Price must be required"],
+      residualValueRules: [(v) => !!v || "Residual Value must be required"],
       colourRules: [(v) => !!v || "Colour must be required"],
       minContractPriceSatuRules: [(v) => !!v || "Minimum Contract Price (10k MPA) must be required"],
       minContractPriceDuaRules: [(v) => !!v || "Minimum Contract Price (18k MPA) must be required"],
@@ -635,6 +647,7 @@ export default {
         this.purchaseorders.append("vehicle_model", this.form.vehicle_model);
         this.purchaseorders.append("vehicle_variant", this.form.vehicle_variant);
         this.purchaseorders.append("basic_list_price", this.form.basic_list_price);
+        this.purchaseorders.append("residual_value", this.form.residual_value);
         this.purchaseorders.append("colour", this.form.colour);
         this.purchaseorders.append("min_contract_price_satu", this.form.min_contract_price_satu);
         this.purchaseorders.append("min_contract_price_dua", this.form.min_contract_price_dua);
@@ -705,6 +718,7 @@ export default {
         vehicle_model                 : this.form.vehicle_model,
         vehicle_variant               : this.form.vehicle_variant,
         basic_list_price              : this.form.basic_list_price,
+        residual_value                : this.form.residual_value,
         colour                        : this.form.colour,
         min_contract_price_satu       : this.form.min_contract_price_satu,
         min_contract_price_dua        : this.form.min_contract_price_dua,
@@ -805,6 +819,7 @@ export default {
       this.form.vehicle_model = item.vehicle_model;
       this.form.vehicle_variant = item.vehicle_variant;
       this.form.basic_list_price = item.basic_list_price;
+      this.form.residual_value = item.residual_value;
       this.form.colour = item.colour;
       this.form.min_contract_price_satu = item.min_contract_price_satu;
       this.form.min_contract_price_dua = item.min_contract_price_dua;

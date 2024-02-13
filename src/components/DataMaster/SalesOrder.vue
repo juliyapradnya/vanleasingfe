@@ -150,7 +150,7 @@
               hint="Must be a number"
               persistent-hint
             ></v-text-field>
-            <v-text-field
+            <!-- <v-text-field
               v-model="form.residual_value"
               label="Residual Value Projection"
               outlined
@@ -158,7 +158,7 @@
               required
               hint="Must be a number"
               persistent-hint
-            ></v-text-field>
+            ></v-text-field> -->
                 
           </v-form>
         </v-card-text>
@@ -229,7 +229,7 @@ export default {
         { text: "Initial Rental (Excl VAT)", value: "initial_rental" },
         { text: "Monthly Rental (Excl VAT)", value: "monthly_rental" },
         { text: "Delivery Charge (Excl VAT)", value: "other_income" },
-        { text: "Residual Value Projection", value: "residual_value" },
+        //{ text: "Residual Value Projection", value: "residual_value" },
         { text: "Actions", value: "actions" , width: '100px'},
       ],
       salesorders: new FormData(),
@@ -242,7 +242,7 @@ export default {
         agreement_number: null,
         cust_name: null,
         contract_start_date: null,
-        residual_value: null,
+        //residual_value: null,
         annual_mileage: null,
         term_months: null,
         initial_rental: null,
@@ -260,7 +260,7 @@ export default {
       vehicleVariantRules: [(v) => !!v || "Vehicle Variant must be required"],
       vehicleDescriptionRules: [(v) => !!v || "Vehicle Description must be required"],
       basicListPriceRules: [(v) => !!v || "Basic List Price must be required"],
-      residualValueRules: [(v) => !!v || "Residual Value must be required"],
+      //residualValueRules: [(v) => !!v || "Residual Value must be required"],
       annualMileageRules: [(v) => !!v || "Annual Mileage must be required"],
       termMonthsRules: [(v) => !!v || "Term Month must be required"],
       initialRentalRules: [(v) => !!v || "Initial Rental must be required"],
@@ -316,7 +316,7 @@ export default {
         this.salesorders.append("agreement_number", this.form.agreement_number);
         this.salesorders.append("cust_name", this.form.cust_name);
         this.salesorders.append("contract_start_date", this.form.contract_start_date);
-        this.salesorders.append("residual_value", this.form.residual_value);
+        //this.salesorders.append("residual_value", this.form.residual_value);
         this.salesorders.append("annual_mileage", this.form.annual_mileage);
         this.salesorders.append("term_months", this.form.term_months);
         this.salesorders.append("initial_rental", this.form.initial_rental);
@@ -358,7 +358,7 @@ export default {
         agreement_number      : this.form.agreement_number,
         cust_name             : this.form.cust_name,
         contract_start_date   : this.form.contract_start_date,
-        residual_value        : this.form.residual_value,
+        //residual_value        : this.form.residual_value,
         annual_mileage        : this.form.annual_mileage,
         term_months           : this.form.term_months,
         initial_rental        : this.form.initial_rental,
@@ -428,7 +428,7 @@ export default {
       this.form.agreement_number = item.agreement_number;
       this.form.cust_name = item.cust_name;
       this.form.contract_start_date = item.contract_start_date;
-      this.form.residual_value = item.residual_value;
+      //this.form.residual_value = item.residual_value;
       this.form.annual_mileage = item.annual_mileage;
       this.form.term_months = item.term_months;
       this.form.initial_rental = item.initial_rental;
